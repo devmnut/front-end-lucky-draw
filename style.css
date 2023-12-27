@@ -1,0 +1,277 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+body {
+  font-family: Open Sans;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; 
+  /* background: url(./bg-draw.jpg); */
+  /* background: url(./bg-da.png); */
+  /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+  url(https://img.freepik.com/free-vector/background-with-futuristic-tech-details_23-2148507883.jpg?t=st=1703575040~exp=1703575640~hmac=87907d2509e13ebcfea7d5813fb540a0b9cf318ea7a469e7d6d5bc590ece9a6c); */
+  background-size: cover; 
+  background-color: #000;
+}
+
+.mainbox {
+  position: relative;
+  width: 500px;
+  height: 500px;
+}
+
+.mainbox:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  /* background: url(./arrow-bottom.png) no-repeat; */
+  background: url(./point-draw.svg) no-repeat;
+  /* background-size: 5%; */
+  background-size: 15%;
+  left: -70px;
+  /* top: 48%; */
+  top: 0%;
+  /* transform: rotate(90deg); */
+  transform: rotate(135deg);
+}
+
+.box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 50%;
+  /* border: 10px solid #949090; */
+  border: 10px solid #27386F;
+  overflow: hidden;
+  transition: all ease-in-out 5s;
+  transform: rotate(90deg);
+}
+
+span {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  position: absolute;
+}
+
+.span1 {
+  clip-path: polygon(0 17%, 0 50%, 50% 50%);
+  /* background-color: green; */
+  background-color: #919d914a;
+}
+
+.span2 {
+  clip-path: polygon(0 17%, 30% 0, 50% 50%);
+  /* background-color: red; */
+  background-color: #b9b9b982;
+}
+
+.span3 {
+  clip-path: polygon(30% 0, 71% 0, 50% 50%);
+  /* background-color: blue; */
+  background-color: #c3c3d363;
+}
+
+.span4 {
+  clip-path: polygon(71% 0, 100% 18%, 50% 50%);
+  /* background-color: salmon; */
+  background-color: #9f9a9966;
+}
+
+.span5 {
+  clip-path: polygon(100% 18%, 100% 50%, 50% 50%);
+  /* background: #ff8300; */
+  background: #e8e8ee;
+}
+
+.box2 .span3 {
+  /* background-color: #00ff04; */
+  background-color: #e6e6ec;
+}
+
+.box2 {
+  width: 100%;
+  height: 100%;
+  transform: rotate(180deg);
+}
+
+.font {
+  color: white;
+  font-size: 20px;
+}
+
+.box1 .span1 b {
+  position: absolute;
+  top: 39%;
+  right: 60%;
+  transform: rotate(200deg);
+  text-align: center;
+}
+
+.box1 .span2 b {
+  position: absolute;
+  top: 25%;
+  right: 57%;
+  transform: rotate(-130deg);
+}
+
+.box1 .span3 b {
+  position: absolute;
+  top: 20%;
+  right: 36%;
+  transform: rotate(-90deg);
+}
+
+.box1 .span4 b {
+  position: absolute;
+  top: 25%;
+  right: 15%;
+  transform: rotate(-45deg);
+}
+
+.box1 .span5 b {
+  position: absolute;
+  top: 38%;
+  right: 10%;
+  transform: rotate(-15deg);
+  text-align: center;
+}
+
+.box2 .span1 b {
+  position: absolute;
+  top: 34%;
+  right: 70%;
+  transform: rotate(200deg);
+}
+
+.box2 .span2 b {
+  position: absolute;
+  top: 20%;
+  right: 60%;
+  transform: rotate(-130deg);
+  text-align: center;
+}
+
+.box2 .span3 b {
+  position: absolute;
+  top: 15%;
+  right: 40%;
+  transform: rotate(270deg);
+}
+
+.box2 .span4 b {
+  position: absolute;
+  top: 27%;
+  right: 20%;
+  transform: rotate(310deg);
+}
+
+.box2 .span5 b {
+  position: absolute;
+  top: 35%;
+  right: 10%;
+  transform: rotate(-20deg);
+  text-align: center;
+}
+
+.spin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 4px solid white;
+  background-color: #ff5722;
+  color: #fff;
+  box-shadow: 0 5px 20px #000;
+  font-weight: bold;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.spin:active {
+  width: 70px;
+  height: 70px;
+  font-size: 20px;
+}
+
+.mainbox.animate:after {
+  animation: animateArrow 0.7s ease infinite;
+}
+
+audio {
+  display: none;
+}
+
+@keyframes animateArrow {
+  50% {
+    right: -50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mainbox {
+    width: 100%;
+    height: 50%;
+  }
+}
+#box{
+  background-color: #fff;
+}
+#img1 img{
+    position: absolute;
+    width: 15%;
+    top: 31%;
+    transform: rotate(-75deg);
+    left: 5%;
+} 
+#img2 img{
+  position: absolute;
+  width: 15%;
+  top: 12%;
+  transform: rotate(-40deg);
+  left: 18%;
+}  
+#img3 img{
+  position: absolute;
+  width: 15%;
+  top: 3%;
+  transform: rotate(0deg);
+  left: 42%;
+}  
+#img4 img{
+  position: absolute;
+  width: 15%;
+  top: 13%;
+  transform: rotate(40deg);
+  left: 67%;
+}  
+#img5 img{
+  position: absolute;
+  width: 15%;
+  top: 31%;
+  transform: rotate(75deg);
+  left: 81%;
+}
+
+
+path {
+  fill: transparent;
+}
+svg{
+  position: absolute; 
+    top: 2%;
+    transform: rotate(45deg);
+    left: 0%;
+    font-size: 30px;
+}
