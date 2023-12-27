@@ -24,6 +24,8 @@ function spin() {
   // Inisialisasi variabel
   const box = document.getElementById("box");
   const element = document.getElementById("mainbox");
+  const btn = document.getElementById('spin')
+  btn.disabled = true
   let SelectedItem = "";
 
   // Shuffle 450 karena class box1 sudah ditambah 90 derajat diawal. minus 40 per item agar posisi panah pas ditengah.
@@ -85,6 +87,7 @@ function spin() {
        SelectedItem,
       "success"
     );
+    btn.disabled = false
   }, 5500);
 
   // Delay and set to normal state
