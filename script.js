@@ -32,13 +32,23 @@ function spin() {
   // Setiap item memiliki 12.5% kemenangan kecuali item sepeda yang hanya memiliki sekitar 4% peluang untuk menang.
   // Item berupa ipad dan samsung tab tidak akan pernah menang.
   // let Sepeda = shuffle([2210]); //Kemungkinan : 33% atau 1/3
+
+  // let MagicRoaster = shuffle([1890, 2250, 2610]);
+  // let Sepeda = shuffle([1850, 2210, 2570]); //Kemungkinan : 100%
+  // let RiceCooker = shuffle([1810, 2170, 2530]);
+  // let LunchBox = shuffle([1770, 2130, 2490]);
+  // let Sanken = shuffle([1750, 2110, 2470]);
+  // let Electrolux = shuffle([1630, 1990, 2350]);
+  // let JblSpeaker = shuffle([1570, 1930, 2290]);
+
   let MagicRoaster = shuffle([1890, 2250, 2610]);
-  let Sepeda = shuffle([1850, 2210, 2570]); //Kemungkinan : 100%
-  let RiceCooker = shuffle([1810, 2170, 2530]);
-  let LunchBox = shuffle([1770, 2130, 2490]);
-  let Sanken = shuffle([1750, 2110, 2470]);
-  let Electrolux = shuffle([1630, 1990, 2350]);
-  let JblSpeaker = shuffle([1570, 1930, 2290]);
+  let Sepeda       = shuffle([1890, 2250, 2610]);  
+  let RiceCooker   = shuffle([1890, 2250, 2610]);
+  let LunchBox     = shuffle([1890, 2250, 2610]);
+  let Sanken       = shuffle([1890, 2250, 2610]);
+  let Electrolux   = shuffle([1890, 2250, 2610]);
+  let JblSpeaker   = shuffle([1890, 2250, 2610]);
+ 
 
   // Bentuk acak
   let Hasil = shuffle([
@@ -51,24 +61,24 @@ function spin() {
     JblSpeaker[0],
   ]);
   // console.log(Hasil[0]);
-
-  // Ambil value item yang terpilih
-  // if (MagicRoaster.includes(Hasil[0])) SelectedItem = "Magic Roaster";
-  // if (Sepeda.includes(Hasil[0])) SelectedItem = "Sepeda Aviator";
-  // if (RiceCooker.includes(Hasil[0])) SelectedItem = "Unlucky";
-  // if (LunchBox.includes(Hasil[0])) SelectedItem = "Lunch Box Lock&Lock";
-  // if (Sanken.includes(Hasil[0])) SelectedItem = "Air Cooler Sanken";
-  // if (Electrolux.includes(Hasil[0])) SelectedItem = "Electrolux Blender";
-  // if (JblSpeaker.includes(Hasil[0])) SelectedItem = "JBL Speaker";
-
+ 
     // Ambil value item yang terpilih
-    if (MagicRoaster.includes(Hasil[0])) SelectedItem = "Unlucky";
-    if (Sepeda.includes(Hasil[0])) SelectedItem = "I Phone 12 Pro Max"; 
-    if (RiceCooker.includes(Hasil[0])) SelectedItem = "Headphone"; 
-    if (LunchBox.includes(Hasil[0])) SelectedItem = "Tablet ";
-    if (Sanken.includes(Hasil[0])) SelectedItem = "Laptop ROG Starix";
-    if (Electrolux.includes(Hasil[0])) SelectedItem = "Headphone";
-    if (JblSpeaker.includes(Hasil[0])) SelectedItem = "Headphone";
+    // if (MagicRoaster.includes(Hasil[0])) SelectedItem = "Unlucky";
+    // if (Sepeda.includes(Hasil[0])) SelectedItem       = "I Phone 12 Pro Max"; 
+    // if (RiceCooker.includes(Hasil[0])) SelectedItem   = "Headphone"; 
+    // if (LunchBox.includes(Hasil[0])) SelectedItem     = "Tablet ";
+    // if (Sanken.includes(Hasil[0])) SelectedItem       = "Laptop ROG Starix";
+    // if (Electrolux.includes(Hasil[0])) SelectedItem   = "Headphone";
+    // if (JblSpeaker.includes(Hasil[0])) SelectedItem   = "Headphone";
+
+     // Ambil value item yang terpilih
+     if (MagicRoaster.includes(Hasil[0])) SelectedItem = "Unlucky";
+     if (Sepeda.includes(Hasil[0])) SelectedItem       = "Unlucky";
+     if (RiceCooker.includes(Hasil[0])) SelectedItem   = "Unlucky"; 
+     if (LunchBox.includes(Hasil[0])) SelectedItem     = "Unlucky";
+     if (Sanken.includes(Hasil[0])) SelectedItem       = "Unlucky"; 
+     if (Electrolux.includes(Hasil[0])) SelectedItem   = "Unlucky";
+     if (JblSpeaker.includes(Hasil[0])) SelectedItem   = "Unlucky";
   
 
   // Proses
@@ -81,12 +91,27 @@ function spin() {
 
   // Munculkan Alert
   setTimeout(function () {
-    applause.play();
-    swal(
-      "Congratulations",
-       SelectedItem,
-      "success"
-    );
+    // applause.play();
+    // swal(
+    //   "Congratulations",
+    //    SelectedItem,
+    //   "success"
+    // );
+    if (SelectedItem != MagicRoaster && SelectedItem != Sepeda && SelectedItem != RiceCooker && SelectedItem != LunchBox && SelectedItem != Sanken && SelectedItem != Electrolux && SelectedItem != JblSpeaker) {
+      Unlucky.play();
+      swal(
+        "Sad",
+        SelectedItem,
+        "error"
+      );
+    } else {
+      applause.play();
+      swal(
+        "Congratulations", 
+        SelectedItem, 
+        "success"
+      );
+    }
     btn.disabled = false
   }, 5500);
 
@@ -96,3 +121,6 @@ function spin() {
     box.style.transform = "rotate(90deg)";
   }, 6000);
 }
+
+
+ 

@@ -9,21 +9,34 @@ body {
   font-family: Open Sans;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   height: 100vh;
   overflow: hidden; 
-  /* background: url(./bg-draw.jpg); */
-  /* background: url(./bg-da.png); */
-  /* background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-  url(https://img.freepik.com/free-vector/background-with-futuristic-tech-details_23-2148507883.jpg?t=st=1703575040~exp=1703575640~hmac=87907d2509e13ebcfea7d5813fb540a0b9cf318ea7a469e7d6d5bc590ece9a6c); */
-  background-size: cover; 
-  background-color: #000;
+  /* background-size: cover;   */
+  background-color : transparent ;
 }
 
 .mainbox {
   position: relative;
   width: 500px;
   height: 500px;
+}
+
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  .mainbox {
+    position: relative;
+    width: 450px;
+    height: 450px;
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .mainbox {
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
 }
 
 .mainbox:after {
@@ -221,8 +234,10 @@ audio {
 
 @media (max-width: 576px) {
   .mainbox {
-    width: 100%;
-    height: 50%;
+    /* width: 100%;
+    height: 50%; */
+    width: 400px;
+    height: 400px;
   }
 }
 #box{
